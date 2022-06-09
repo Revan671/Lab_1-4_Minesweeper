@@ -12,7 +12,7 @@ public:
 	wxTextCtrl *m_txt1 = nullptr;
 	wxListBox *m_lst1 = nullptr;
 
-	void OnButtonClicked(wxCommandEvent& evt);
+	void OnButtonClicked(wxCommandEvent &evt);
 
 	wxDECLARE_EVENT_TABLE();
 

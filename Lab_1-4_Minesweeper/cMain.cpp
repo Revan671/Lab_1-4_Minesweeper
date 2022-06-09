@@ -15,7 +15,7 @@ cMain::~cMain()
 {
 }
 
-void OnButtonClicked(wxCommandEvent& evt) 
+void cMain::OnButtonClicked(wxCommandEvent& evt)
 {
-
+	m_lst1->AppendString(m_txt1->GetValue());
 }

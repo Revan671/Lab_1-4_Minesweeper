@@ -13,6 +13,8 @@ cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Lab 1.4 Minesweeper", wxPoint(30,30
 		for (int y = 0; y < nFieldHeight; y++) {
 			btn[y * nFieldWidth + x] = new wxButton(this, 10000 + (y * nFieldWidth + x));
 			grid->Add(btn[y * nFieldWidth + x], 1, wxEXPAND | wxALL);
+
+			btn[y * nFieldWidth + x]->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &cMain::OnButtonClicked, this);
 		}
 	}
 
@@ -23,10 +25,15 @@ cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Lab 1.4 Minesweeper", wxPoint(30,30
 
 cMain::~cMain()
 {
-
+	delete[] btn;
 }
 
 void cMain::OnButtonClicked(wxCommandEvent& evt)
 {
+	int x = (evt.GetId() - 10000) % nFieldWidth;
+	int y = (evt.GetId() - 10000) / nFieldHeight;
+
+
+
 	evt.Skip();
 }
